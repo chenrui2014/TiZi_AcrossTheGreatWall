@@ -248,9 +248,7 @@ Severspeeder:
         service docker start
 
         docker run --name shadowsock1 -p 443:8989 -ti centos:6 /bin/bash
-            yum update -y && yum install -y wget net-tools vim
-            wget https://raw.githubusercontent.com/XetRAHF/shadowsocks_install/master/shadowsocks-all.sh
-            bash ./shadowsocks-all.sh
+            yum update -y && yum install -y wget net-tools vim && wget https://raw.githubusercontent.com/xetra-enterprize/shadowsocks_install/master/shadowsocks-all.sh && bash ./shadowsocks-all.sh
             vi /etc/rc.local 
             > Appending following lines to the end of file:
                 echo 3 > /proc/sys/net/ipv4/tcp_fastopen
@@ -265,9 +263,7 @@ Severspeeder:
             /etc/init.d/shadowsocks-r restart
         
         docker run --name shadowsock2 -p 80:8989 -ti centos:6 /bin/bash
-            yum update -y && yum install -y wget net-tools vim
-            wget https://raw.githubusercontent.com/XetRAHF/shadowsocks_install/master/shadowsocks-all.sh
-            bash ./shadowsocks-all.sh
+            yum update -y && yum install -y wget net-tools vim && wget https://raw.githubusercontent.com/xetra-enterprize/shadowsocks_install/master/shadowsocks-all.sh && bash ./shadowsocks-all.sh
             vi /etc/rc.local 
             > Appending following lines to the end of file:
                 echo 3 > /proc/sys/net/ipv4/tcp_fastopen
