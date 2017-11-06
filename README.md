@@ -39,12 +39,20 @@
 	* 硬盘：10G以上即可
 	* 推荐系统：CentOS 6 x64
 	* 推荐内核(kernel)版本：4.4.0-x86-64
-### 更换服务器内核
+* 示范例子1:
+	* 环境（Linode新加坡）
+	* 选择服务器
+	![Choose Server]()
+### 更换服务器内核 (重要步骤)
 ```
 wget http://ftp.scientificlinux.org/linux/scientific/6.6/x86_64/updates/security/kernel-2.6.32-504.3.3.el6.x86_64.rpm
 rpm -ivh kernel-2.6.32-504.3.3.el6.x86_64.rpm --force
 reboot
 ```
+
+* 示范例子1:
+* 环境（Linode新加坡）
+
 ### 安装瑞速
 * 为什么：这个东西能使你原本与服务器连接只有300KBs的速度提升到60M以上
 * 怎么做：
@@ -84,7 +92,12 @@ docker run --name shadowsock1 -p 443:8989 -ti centos:6 /bin/bash
 docker run --name shadowsock2 -p 80:8989 -ti centos:6 /bin/bash
 ```
 ### 安装并启动两个SSR容器
-* 使用`docker ps -a`查看你的containerID
+* 使用`docker ps -a`查看你的`containerID`
+* 分别启动2个容器并配置ssr服务
+
+* 示范例子1：
+* 环境(Linode新加坡机房):
+
 
 
 ### 保证服务器稳定性
