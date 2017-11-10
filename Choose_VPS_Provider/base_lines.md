@@ -8,6 +8,11 @@
 * 你需要一张信用卡（如果你没有你可以使用`Global cash全球付`, 或者使用汇率飞起的淘宝虚拟信用卡）
 * 你需要为每个月准备至少5美元，或10美元（已经很低了，减减肥，就省出来了）
 
+* [日本](https://github.com/XetRAHF/TiZi_AcrossTheGreatWall/blob/09cae3ec36878eae2709a686547ba62b60c90c8c/Choose_VPS_Provider/Japan.md)
+* [美国](https://github.com/XetRAHF/TiZi_AcrossTheGreatWall/blob/09cae3ec36878eae2709a686547ba62b60c90c8c/Choose_VPS_Provider/America.md)
+* [香港](https://github.com/XetRAHF/TiZi_AcrossTheGreatWall/blob/09cae3ec36878eae2709a686547ba62b60c90c8c/Choose_VPS_Provider/Asia.md)
+* [欧洲](https://github.com/XetRAHF/TiZi_AcrossTheGreatWall/blob/09cae3ec36878eae2709a686547ba62b60c90c8c/Choose_VPS_Provider/Europe.md)
+
 ## 推荐配置
 * CPU：一个核心足以
 * 内存：512即可
