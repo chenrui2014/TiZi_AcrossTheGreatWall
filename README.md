@@ -1,6 +1,7 @@
 # 科学上网的最终秘籍（最详细的说明）
-> 还在努力编写中, 欢迎大家一起来帮忙
+> 还在努力编写中, 欢迎大家一起来帮忙，在development分支继续开发
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
 ## 关于喝茶
 * 如果喜欢就`follow`我吧，多谢🙏
 * 请不要在`issue`里面谈论`政治`
@@ -86,14 +87,97 @@ yum -y install docker-io
 service docker start
 ```
 ### 部署两个Docker SSR容器
-* 怎么做：
+* 启动第一个SSR容器并开启SSR服务
+
 ```
 docker run --name shadowsock1 -p 443:8989 -ti centos:6 /bin/bash
+```
+* 在容器内执行
+
+```
+  yum update -y && yum install -y wget net-tools vim && wget https://raw.githubusercontent.com/xetra-enterprize/shadowsocks_install/master/shadowsocks-all.sh && bash ./shadowsocks-all.sh
+```
+* 用vim编辑器编辑/etc/rc.local
+
+```
+vi /etc/rc.local 
+```
+* 在这个文件的末尾追加
+ 
+```
+echo 3 > /proc/sys/net/ipv4/tcp_fastopen
+```
+* 用vim编辑器编辑/etc/sysctl.conf
+
+```
+vi /etc/sysctl.conf
+```
+* 在这个文件的末尾追加
+
+```
+net.ipv4.tcp_fastopen = 3
+```
+
+* 用vim编辑器编辑/etc/shadowsocks-r/config.json
+
+```
+vi /etc/shadowsocks-r/config.json
+```
+* 里面有个`tcp_fast_open`的变量，把false改成true
+
+* 最后重启SSR服务
+
+```
+/etc/init.d/shadowsocks-r restart
+```
+* 使用`Ctrl+D`退出容器
+
+* 启动第二个SSR容器并开启SSR服务
+
+```
 docker run --name shadowsock2 -p 80:8989 -ti centos:6 /bin/bash
 ```
-### 安装并启动两个SSR容器
-* 使用`docker ps -a`查看你的`containerID`
-* 分别启动2个容器并配置ssr服务
+* 在容器内执行
+
+```
+  yum update -y && yum install -y wget net-tools vim && wget https://raw.githubusercontent.com/xetra-enterprize/shadowsocks_install/master/shadowsocks-all.sh && bash ./shadowsocks-all.sh
+```
+* 用vim编辑器编辑/etc/rc.local
+
+```
+vi /etc/rc.local 
+```
+* 在这个文件的末尾追加
+ 
+```
+echo 3 > /proc/sys/net/ipv4/tcp_fastopen
+```
+* 用vim编辑器编辑/etc/sysctl.conf
+
+```
+vi /etc/sysctl.conf
+```
+* 在这个文件的末尾追加
+
+```
+net.ipv4.tcp_fastopen = 3
+```
+
+* 用vim编辑器编辑/etc/shadowsocks-r/config.json
+
+```
+vi /etc/shadowsocks-r/config.json
+```
+* 里面有个tcp_fast_open的变量，把false改成true
+
+* 最后重启SSR服务
+
+```
+/etc/init.d/shadowsocks-r restart
+```
+* 使用`Ctrl+D`退出容器
+* 至此我们就完成了服务器的配置
+
 
 * 示范例子1：
 * 环境(Linode新加坡机房):
@@ -107,6 +191,7 @@ docker run --name shadowsock2 -p 80:8989 -ti centos:6 /bin/bash
 * （高手专用）因为shadowsocks支持监听服务器所有地址（VPN不支持）所以你可以给服务器做一个快照（如果到这里你还读不懂的话，就忽略掉吧），然后再第二个服务器山复原快照，但是你仍然需要为第二个服务器手动更换内核，安装瑞速，启动容器，并进入每一个Docker容器开启SSR服务
 
 ## 配置翻墙服务器防火墙（高手装用，非必需）
+* 只开放80和443端口，避免被ping到
 
 
 
@@ -230,59 +315,11 @@ sudo pip --proxy http://PROXYDOM:PROXYPORT install package
 
 
 ## 最后祝大家办公愉快
-```
-Severspeeder:
-        wget http://ftp.scientificlinux.org/linux/scientific/6.6/x86_64/updates/security/kernel-2.6.32-504.3.3.el6.x86_64.rpm
-        rpm -ivh kernel-2.6.32-504.3.3.el6.x86_64.rpm --force
-        reboot
 
-        wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeser_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh install
-        /appex/bin/serverSpeeder.sh restart
-        yyy
-
-    Linode VPS as a VPN:
-        System: CentOS 6 x64
-        change kernel version to 4.4.0-x86-64-linode63
-
-        rpm -iUvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
-        yum update -y
-        yum -y install docker-io
-        service docker start
-
-        docker run --name shadowsock1 -p 443:8989 -ti centos:6 /bin/bash
-            yum update -y && yum install -y wget net-tools vim && wget https://raw.githubusercontent.com/xetra-enterprize/shadowsocks_install/master/shadowsocks-all.sh && bash ./shadowsocks-all.sh
-            vi /etc/rc.local 
-            > Appending following lines to the end of file:
-                echo 3 > /proc/sys/net/ipv4/tcp_fastopen
-            
-            vi /etc/sysctl.conf
-            > Appending following lines to the end of file:
-                net.ipv4.tcp_fastopen = 3
-            
-            vi /etc/shadowsocks-r/config.json
-            > Change to true enable fast open
-
-            /etc/init.d/shadowsocks-r restart
-        
-        docker run --name shadowsock2 -p 80:8989 -ti centos:6 /bin/bash
-            yum update -y && yum install -y wget net-tools vim && wget https://raw.githubusercontent.com/xetra-enterprize/shadowsocks_install/master/shadowsocks-all.sh && bash ./shadowsocks-all.sh
-            vi /etc/rc.local 
-            > Appending following lines to the end of file:
-                echo 3 > /proc/sys/net/ipv4/tcp_fastopen
-            
-            vi /etc/sysctl.conf
-            > Appending following lines to the end of file:
-                net.ipv4.tcp_fastopen = 3
-            
-            vi /etc/shadowsocks-r/config.json
-            > Change to true enable fast open
-
-            /etc/init.d/shadowsocks-r restart
-
-        
-    Test it before use it!
-        docker exec -ti e763b2ab011a /bin/bash
-        docker exec -ti 944b08625cec /bin/bash
-        docker exec -ti 6c5427f92cb1 /bin/bash
-        docker exec -ti bc6b9971acbe /bin/bash
+## 如果你配置服务器的时候，ssh的连接中断了，怎么办
+···
+docker exec -ti e763b2ab011a /bin/bash
+docker exec -ti 944b08625cec /bin/bash
+docker exec -ti 6c5427f92cb1 /bin/bash
+docker exec -ti bc6b9971acbe /bin/bash
  ```
