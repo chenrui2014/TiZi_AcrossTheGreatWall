@@ -223,6 +223,10 @@ vi /etc/shadowsocks-r/config.json
 [Proxifier(把你的shadowsocksR转换成为VPN)](https://www.proxifier.com)
 
 ### 给常用的程序上代理（程序员）
+* Docker 使用国内镜像：
+* 修改Docker配置文件`/etc/default/docker`如下：
+  `DOCKER_OPTS="--registry-mirror=http://aad0405c.m.daocloud.io"`
+  使用`service docker restart`重启`Docker服务`即可。
 > 如果您使用proxifier最好也还是再配置代理，那样会更稳
 
 * GIT:
