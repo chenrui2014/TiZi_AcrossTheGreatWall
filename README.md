@@ -306,6 +306,12 @@ sudo pip --proxy http://PROXYDOM:PROXYPORT install package
 * 不要在Azure中国（由世纪互联运营）上搭建翻墙服务器，会被查水表
 * 不要使用AWS和Google Cloud等(Pay as you Go)的服务器提供商上搭建梯子（当然，如果您是土豪的话是可以的）那里的流量是按照GB计费的，非常贵
 
+## 关于串联服务器的误区
+* 你可能认为设置一个日本的服务器，再设置一个美国的服务器，让日本的服务器做中转，这样就就可以加快连接的速度，降低延迟。如果美国服务器没有被GFW限速或禁止，那么这样做只会使你的速度更慢。
+
+## 谁都不会告诉你的秘密
+* 搭建稳定翻墙服务器的核心秘诀是选择一个优质的服务器地理位置
+
 ## 原理问题：
 * Shadowsocks与VPN之间的关系：
 	* 参考：[Shadowsocks与VPN的区别](http://blog.csdn.net/guyue35/article/details/50932177)
