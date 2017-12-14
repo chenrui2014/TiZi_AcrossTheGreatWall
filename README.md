@@ -313,6 +313,13 @@ sudo pip --proxy http://PROXYDOM:PROXYPORT install package
 * Shadowsocks与ShadowsocksR的关系：
 	* 参考：[Shadowsocks与ShadowsocksR的关系](https://www.librehat.com/about-shadowsocks-r-and-the-security-of-shadowsocks/)
 
+## 我们可以让日本服务器转发我们的连接到美国服务器, 下面就是一个例子
+```
+sudo su
+echo 1 > /proc/sys/net/ipv4/ip_forward
+iptables -t nat -A PREROUTING -p tcp --dport 8388 -j DNAT --to-destination US_VPS_IP:8388
+iptables -t nat -A POSTROUTING -p tcp -d US_VPS_IP --dport 8388 -j SNAT --to-source JAPAN_VPS_IP
+```
 
 ## 基于OpenWRT的路由器
 > 推荐架构
