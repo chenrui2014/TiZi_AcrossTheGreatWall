@@ -220,6 +220,9 @@ vi /etc/shadowsocks-r/config.json
 # 用Proxifier将我们的ShadowsocksR转换为VPN模式
 > 此时ShadowsocksR就和VPN一样了
 ## Proxifier 官网
+
+* Proxifier for mac 激活码：P427L-9Y552-5433E-8DSR3-58Z68 
+
 [Proxifier(把你的shadowsocksR转换成为VPN)](https://www.proxifier.com)
 
 ### 给常用的程序上代理（程序员）
