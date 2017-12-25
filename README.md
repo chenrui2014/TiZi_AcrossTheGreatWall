@@ -1,4 +1,4 @@
-# 科学上网的最终秘籍（最详细的说明）
+# 科学上网的秘籍
 > 还在努力编写中, 欢迎大家一起来帮忙，在development分支继续开发
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
@@ -235,7 +235,7 @@ vi /etc/shadowsocks-r/config.json
 * GIT:
 	*  `git config --global http.proxy 'socks5://127.0.0.1:1086'`
 
-* Node Package Manager(NPM):
+* Node Package Manager(NPM)（请看文章末尾）:
 
 ```
 npm config set strict-ssl false
@@ -342,7 +342,20 @@ iptables -t nat -A POSTROUTING -p tcp -d US_VPS_IP --dport 8388 -j SNAT --to-sou
 
 ## 最后祝大家办公愉快
 
-## 如果你配置服务器的时候，ssh的连接中断了，怎么办
+## 鉴于npm不能使用代理的问题
+安装OpenVPN服务器
+```
+wget https://raw.githubusercontent.com/Angristan/OpenVPN-install/master/openvpn-install.sh
+chmod +x openvpn-install.sh
+```
+配置乌班图客户端
+```
+sudo apt-get install openvpn
+sudo apt-get install network-manager-openvpn-gnome
+sudo openvpn --config '/home/jglerner/Desktop/vpnbook-us1-tcp443.ovpn'
+```
+
+
 ···
 docker exec -ti e763b2ab011a /bin/bash
 docker exec -ti 944b08625cec /bin/bash
