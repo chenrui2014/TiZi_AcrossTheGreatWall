@@ -238,6 +238,7 @@ vi /etc/shadowsocks-r/config.json
 * Node Package Manager(NPM):
 
 ```
+npm config set strict-ssl false
 npm config set proxy http://127.0.0.1:1087
 npm config set https-proxy http://127.0.0.1:1087
 export HTTP_PROXY=http://127.0.0.1:1087
