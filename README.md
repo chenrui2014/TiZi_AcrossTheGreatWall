@@ -1,6 +1,7 @@
 # 科学上网的秘籍
 > 还在努力编写中, 欢迎大家一起来帮忙，在development分支继续开发
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
 > 如果您熟悉linux系统，您可以使用更好的ssr串联服务器架构，改方法更稳定(支持ip混淆同时支持故障重启)，但部属过程复杂，[点进来看readme.md](https://zerqqr1_xetrastudio@bitbucket.org/xetrafhan/anti-gfw.git)
 
 ## 关于喝茶
