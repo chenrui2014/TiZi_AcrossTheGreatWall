@@ -224,6 +224,7 @@ vi /etc/shadowsocks-r/config.json
 ## Proxifier 官网
 
 * Proxifier for mac 激活码：P427L-9Y552-5433E-8DSR3-58Z68 
+* Proxifier for windows: KFZUS-F3JGV-T95Y7-BXGAS-5NHHP 
 
 [Proxifier(把你的shadowsocksR转换成为VPN)](https://www.proxifier.com)
 
