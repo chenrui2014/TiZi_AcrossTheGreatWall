@@ -1,0 +1,4 @@
+1.屏蔽软件自动升级
+修改"hosts"文件，文件路径 "C:\Windows\System32\drivers\etc"
+加入以下字段并保存
+127.0.0.1 updates.connectify.me
