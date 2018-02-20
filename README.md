@@ -2,7 +2,7 @@
 > 如果有更好的教程，欢迎大佬们提`issue`
 * 欢迎去Download文件夹下载ssr，proxifier，openvpn客户端
 * 这篇教程稍难，但是效果是所有教程中最好的，如果您没用太多经验，可能会遇到些问题
-* 旧版本教程链接（方法笨些，解释更友好些） [请点这里](https://raw.githubusercontent.com/XetRAHF/TiZi_AcrossTheGreatWall/master/README-dept.md)
+* 旧版本教程链接（方法笨些，解释更友好些） [请点这里](https://github.com/XetRAHF/TiZi_AcrossTheGreatWall/blob/master/README-dept.md)
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
@@ -155,7 +155,7 @@ sudo iptables -A INPUT -p tcp --dport 22 -j DROP
 
 ## 其他
 * 如果您的服务器在日本，您可以通过更改`/etc/sysconfig/network-scripts/ifcfg-eth0`DNS设置，然后使用`/etc/init.d/network restart`应用更改
-* 如果您只使用代理，请看[旧版本教程](https://raw.githubusercontent.com/XetRAHF/TiZi_AcrossTheGreatWall/master/README-dept.md)，里面有代理配置说明
+* 如果您只使用代理，请看[旧版本教程](https://github.com/XetRAHF/TiZi_AcrossTheGreatWall/blob/master/README-dept.md)，里面有代理配置说明
 * windows中torrent与dropbox依然存在问题，不能使用
 * Proxifier for mac 激活码：P427L-9Y552-5433E-8DSR3-58Z68 
 * Proxifier for windows: KFZUS-F3JGV-T95Y7-BXGAS-5NHHP 
